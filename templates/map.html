@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9d404faff1fda7d119b3876254bf2d27 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_9d404faff1fda7d119b3876254bf2d27" ></div>
+        
+</body>
+<script>    
+    
+            var map_9d404faff1fda7d119b3876254bf2d27 = L.map(
+                "map_9d404faff1fda7d119b3876254bf2d27",
+                {
+                    center: [21.2941, -157.8284],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 16,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0e76a07f0594404d8b162480174389f2 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9d404faff1fda7d119b3876254bf2d27);
+        
+    
+            var marker_e5a661bfcb6903bfafe0e682ff2d77ba = L.marker(
+                [21.2941, -157.8284],
+                {}
+            ).addTo(map_9d404faff1fda7d119b3876254bf2d27);
+        
+    
+            var icon_99a081cd80b7dde25a1805cb5bab2b8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e5a661bfcb6903bfafe0e682ff2d77ba.setIcon(icon_99a081cd80b7dde25a1805cb5bab2b8a);
+        
+    
+            var marker_cluster_45a8512e5dd915a3d51bf321e5096106 = L.markerClusterGroup(
+                {}
+            );
+            map_9d404faff1fda7d119b3876254bf2d27.addLayer(marker_cluster_45a8512e5dd915a3d51bf321e5096106);
+        
+    
+            var marker_071ad85fafa543138e6b8907cb0d1e74 = L.marker(
+                [21.39256342, -157.9677976],
+                {}
+            ).addTo(marker_cluster_45a8512e5dd915a3d51bf321e5096106);
+        
+    
+        var popup_e9d86cc1520734d863340d796b38e01e = L.popup({"maxWidth": "100%"});
+
+        
+            var i_frame_89d7f2ac97206a73fffc605e8dbaaf96 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgPGgzPiBIYW5ncnkgTWFtYSBCYXIgJiBLaXRjaGVuPC9oMz4KICAgICAgICAgICAgICAgIDxwPiAxMTowMC0xODowMCA8L3A+CiAgICAgICAgICAgICAgICA8cD4gODAzIEthbWVoYW1laGEgSHd5IFVuaXQgMTE2IDxicj4gUGVhcmwgQ2l0eSwgSEkgOTY3ODIgPC9wPgogICAgICAgICAgICAgICAgPHA+ICg4MDgpIDg4OC04ODM0IDwvcD4KICAgICAgICAgICAgICAgIDxwPjxhIGhyZWY9Tm8gV2Vic2l0ZSBBdmFpbGFibGUgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+IE5vIFdlYnNpdGUgQXZhaWxhYmxlIDwvYT48L3A+CiAgICAgICAgICAgICAgICA8cD4gPHU+TWVudTwvdT46IAogICAgICAgICAgICAgICAgPGJyPiQzIERvbWVzdGljIEJlZXJzPGJyPiQ1IEltcG9ydCBCZWVycw==" width="400" style="border:none !important;" height="300"></iframe>`)[0];
+            popup_e9d86cc1520734d863340d796b38e01e.setContent(i_frame_89d7f2ac97206a73fffc605e8dbaaf96);
+        
+
+        marker_071ad85fafa543138e6b8907cb0d1e74.bindPopup(popup_e9d86cc1520734d863340d796b38e01e)
+        ;
+
+        
+    
+    
+            marker_071ad85fafa543138e6b8907cb0d1e74.bindTooltip(
+                `<div>
+                     Hangry Mama Bar & Kitchen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f010a6357707758d6a25d8266145e5e7 = L.marker(
+                [21.27929928, -157.826414],
+                {}
+            ).addTo(marker_cluster_45a8512e5dd915a3d51bf321e5096106);
+        
+    
+        var popup_b09005d5fe1e88d45a1ccbe47fe63ab0 = L.popup({"maxWidth": "100%"});
+
+        
+            var i_frame_35bfa330bafaa4b9036fa0f5a9a21bb5 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgPGgzPiBURVggODA4IEJCUSAmIEJyZXdzPC9oMz4KICAgICAgICAgICAgICAgIDxwPiAxMTowMC0xNzowMCA8L3A+CiAgICAgICAgICAgICAgICA8cD4gMjI5OSBLdWhpbyBBdmUgPGJyPiBIb25vbHVsdSwgSEkgOTY4MTUgPC9wPgogICAgICAgICAgICAgICAgPHA+ICg4MDgpIDg4OC0yNDk1IDwvcD4KICAgICAgICAgICAgICAgIDxwPjxhIGhyZWY9aHR0cHM6Ly90ZXg4MDguc3F1YXJlLnNpdGUvaG9tZSB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIj4gaHR0cHM6Ly90ZXg4MDguc3F1YXJlLnNpdGUvaG9tZSA8L2E+PC9wPgogICAgICAgICAgICAgICAgPHA+IDx1Pk1lbnU8L3U+OiAKICAgICAgICAgICAgICAgIDxicj4xLzIgT2ZmIFNlbGVjdCBBcHBzPGJyPiQ0IFBCUjxicj4kNSBNb2RlbG88YnI+JDUgRnJvemVuIE1hcmdhcml0YXM8YnI+JDUgVGl0b3M8YnI+JDggUGluZWFwcGxlIEV4cHJlc3M=" width="400" style="border:none !important;" height="300"></iframe>`)[0];
+            popup_b09005d5fe1e88d45a1ccbe47fe63ab0.setContent(i_frame_35bfa330bafaa4b9036fa0f5a9a21bb5);
+        
+
+        marker_f010a6357707758d6a25d8266145e5e7.bindPopup(popup_b09005d5fe1e88d45a1ccbe47fe63ab0)
+        ;
+
+        
+    
+    
+            marker_f010a6357707758d6a25d8266145e5e7.bindTooltip(
+                `<div>
+                     TEX 808 BBQ & Brews
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_951dbfc59aae2bbe807e10b30cac7d5d = L.marker(
+                [21.27880838, -157.8293905],
+                {}
+            ).addTo(marker_cluster_45a8512e5dd915a3d51bf321e5096106);
+        
+    
+        var popup_367039f7accc8997240ac946caa4e018 = L.popup({"maxWidth": "100%"});
+
+        
+            var i_frame_4976b84786588c6e343c0a38a4662ad7 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgPGgzPiBUc3VydVRvblRhbiBVZG9uIE5vb2RsZSBCcmFzc2VyaWU8L2gzPgogICAgICAgICAgICAgICAgPHA+IDExOjAwLTE3OjMwIDwvcD4KICAgICAgICAgICAgICAgIDxwPiAyMjMzIEthbGFrYXVhIEF2ZSBCMzEwIDxicj4gSG9ub2x1bHUsIEhJIDk2ODE1IDwvcD4KICAgICAgICAgICAgICAgIDxwPiAoODA4KSA4ODgtODU1OSA8L3A+CiAgICAgICAgICAgICAgICA8cD48YSBocmVmPWh0dHBzOi8vd3d3LnRzdXJ1dG9udGFuLmNvbS9oYXdhaWkgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+IGh0dHBzOi8vd3d3LnRzdXJ1dG9udGFuLmNvbS9oYXdhaWkgPC9hPjwvcD4KICAgICAgICAgICAgICAgIDxwPiA8dT5NZW51PC91PjogCiAgICAgICAgICAgICAgICA8YnI+JDUtNiBCZWVyPGJyPiQ3IEhvdXNlIFJlZC9XaGl0ZSBXaW5lPGJyPiQxMCBTZWxlY3QgV2luZSBCeSBUaGUgR2xhc3M8YnI+JDcgSG90L0NvbGQgU2FrZTxicj4kMjEgTWlvIFNwYXJrbGluZyBTYWtlICgzMDAgbWwpPGJyPiQyMCBDcmVtZSBkZSBTYWtlICgzMDAgbWwpPGJyPiQ3IEhhcmQgU2VsdHplcjxicj4kNyBDYWxwaWNvIENodWhhaTxicj4kOCBIaWdoYmFsbDxicj4kNyBJaWNoaWtvIDxicj4kNyBJaWNoaWtvIE11Z2kg" width="400" style="border:none !important;" height="300"></iframe>`)[0];
+            popup_367039f7accc8997240ac946caa4e018.setContent(i_frame_4976b84786588c6e343c0a38a4662ad7);
+        
+
+        marker_951dbfc59aae2bbe807e10b30cac7d5d.bindPopup(popup_367039f7accc8997240ac946caa4e018)
+        ;
+
+        
+    
+    
+            marker_951dbfc59aae2bbe807e10b30cac7d5d.bindTooltip(
+                `<div>
+                     TsuruTonTan Udon Noodle Brasserie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe3d0d120acae59e4fd9fddd963ea3ac = L.marker(
+                [21.41954458, -157.8049025],
+                {}
+            ).addTo(marker_cluster_45a8512e5dd915a3d51bf321e5096106);
+        
+    
+        var popup_9003d8ce715a20a703089163b28a53ce = L.popup({"maxWidth": "100%"});
+
+        
+            var i_frame_69d9b5379464830915c7e6fe29b2ead9 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgPGgzPiBHeXUtS2FrdSBKYXBhbmVzZSBCQlEgLSBXaW5kd2FyZCBNYWxsPC9oMz4KICAgICAgICAgICAgICAgIDxwPiAxMTowMC0xODowMCA8L3A+CiAgICAgICAgICAgICAgICA8cD4gNDYtMDU2IEthbWVoYW1laGEgSHd5IEYxIDxicj4gS2FuZW9oZSwgSEkgOTY3NDQgPC9wPgogICAgICAgICAgICAgICAgPHA+ICg4MDgpIDc0NC0yMTU3IDwvcD4KICAgICAgICAgICAgICAgIDxwPjxhIGhyZWY9aHR0cHM6Ly93d3cuZ3l1LWtha3UuY29tLz9fZ2E9Mi43MTU4OTYxLjI2OTI3NjMwNi4xNjU5MjM3ODczLTE2OTAwMTMwOTEuMTY1OTIzNzg3MyB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIj4gaHR0cHM6Ly93d3cuZ3l1LWtha3UuY29tLz9fZ2E9Mi43MTU4OTYxLjI2OTI3NjMwNi4xNjU5MjM3ODczLTE2OTAwMTMwOTEuMTY1OTIzNzg3MyA8L2E+PC9wPgogICAgICAgICAgICAgICAgPHA+IDx1Pk1lbnU8L3U+OiAKICAgICAgICAgICAgICAgIDxicj4kMy00Ljk1IEJlZXI8YnI+JDExLjk1LTEyLjk1IFBpdGNoZXJzPGJyPiQ2Ljk1IFNpZ25hdHVyZSBDb2NrdGFpbHM8YnI+JDQuOTUgSG91c2UgU2FrZTxicj4kOS45NSBHeXUtS2FrdSBOaWdvcmkgU2FrZTxicj4kMTQuOTUgTWlvIFNwYXJrbGluZyBTYWtl" width="400" style="border:none !important;" height="300"></iframe>`)[0];
+            popup_9003d8ce715a20a703089163b28a53ce.setContent(i_frame_69d9b5379464830915c7e6fe29b2ead9);
+        
+
+        marker_fe3d0d120acae59e4fd9fddd963ea3ac.bindPopup(popup_9003d8ce715a20a703089163b28a53ce)
+        ;
+
+        
+    
+    
+            marker_fe3d0d120acae59e4fd9fddd963ea3ac.bindTooltip(
+                `<div>
+                     Gyu-Kaku Japanese BBQ - Windward Mall
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c2a7e326101002528ebffd4ae5affbfa = L.marker(
+                [21.2802368, -157.8293386],
+                {}
+            ).addTo(marker_cluster_45a8512e5dd915a3d51bf321e5096106);
+        
+    
+        var popup_13992d0553619613c2880ded03b3c6ed = L.popup({"maxWidth": "100%"});
+
+        
+            var i_frame_e083281a5e9d84563bb484f8d6cbf66d = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgPGgzPiBLZWxsZXkgTydOZWlsJ3M8L2gzPgogICAgICAgICAgICAgICAgPHA+IDExOjAwLTIwOjAwIDwvcD4KICAgICAgICAgICAgICAgIDxwPiAzMTEgTGV3ZXJzIFN0IDxicj4gSG9ub2x1bHUsIEhJIDk2ODE1IDwvcD4KICAgICAgICAgICAgICAgIDxwPiAoODA4KSA5MjYtMTc3NyA8L3A+CiAgICAgICAgICAgICAgICA8cD48YSBocmVmPWh0dHBzOi8va2VsbGV5b25laWxzLmNvbS8gdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+IGh0dHBzOi8va2VsbGV5b25laWxzLmNvbS8gPC9hPjwvcD4KICAgICAgICAgICAgICAgIDxwPiA8dT5NZW51PC91PjogCiAgICAgICAgICAgICAgICA=" width="400" style="border:none !important;" height="300"></iframe>`)[0];
+            popup_13992d0553619613c2880ded03b3c6ed.setContent(i_frame_e083281a5e9d84563bb484f8d6cbf66d);
+        
+
+        marker_c2a7e326101002528ebffd4ae5affbfa.bindPopup(popup_13992d0553619613c2880ded03b3c6ed)
+        ;
+
+        
+    
+    
+            marker_c2a7e326101002528ebffd4ae5affbfa.bindTooltip(
+                `<div>
+                     Kelley O'Neil's
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_540dfa64c54ccb647ee552d95e5210b7 = L.marker(
+                [21.2972145, -157.8529696],
+                {}
+            ).addTo(marker_cluster_45a8512e5dd915a3d51bf321e5096106);
+        
+    
+        var popup_965318e7b1295c08a0c25c2a8a39141a = L.popup({"maxWidth": "100%"});
+
+        
+            var i_frame_ae225fc998a4fca2bb17dc1710197be1 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgPGgzPiBIYW5hIEtvYSBCcmV3aW5nPC9oMz4KICAgICAgICAgICAgICAgIDxwPiAxMTowMC0xNzowMCA8L3A+CiAgICAgICAgICAgICAgICA8cD4gOTYyIEthd2FpYWhhbyBTdCA8YnI+IEhvbm9sdWx1LCBISSA5NjgxNCA8L3A+CiAgICAgICAgICAgICAgICA8cD4gKDgwOCkgNTkxLTIzMzcgPC9wPgogICAgICAgICAgICAgICAgPHA+PGEgaHJlZj1odHRwczovL3d3dy5oYW5ha29hYnJld2luZy5jb20vIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIG5vcmVmZXJyZXIiPiBodHRwczovL3d3dy5oYW5ha29hYnJld2luZy5jb20vIDwvYT48L3A+CiAgICAgICAgICAgICAgICA8cD4gPHU+TWVudTwvdT46IAogICAgICAgICAgICAgICAgPGJyPiQzIDEwIG96IFBvdXJzICgjMSBCcmVha3RpbWUgQmxvbmRlLCAjMiBGaWVsZCBUcmlwIFBpbHNuZXIpPGJyPiQ1IFBpbnRzICgjMSBCcmVha3RpbWUgQmxvbmRlLCAjMiBGaWVsZCBUcmlwIFBpbHNuZXIsICM2IFJhbmRvbSBEYW5jZSBQYXJ0eSwgIzggU2hpZnQgU3RlZXopPGJyPiQ3IFBpbnRzICgjNCBTYW5kYmFyIFNhaXNvbiwgIzUgVGltZSBMaWtlIFRoZXNlLCAjMTAgS2ljayBPdXQgVGhlIEdlbXMsICMxMyBCcm9uYW4gVGhlIEJhcmJhcmlhbiAoMTAgb3ogUG91cikpPGJyPiQxMCBHcm93bGVyICgjNiBSYW5kb20gRGFuY2UgUGFydHkpPGJyPiQ1IEZsaWdodDxicj4kNyBXaW5lICgxNCBIYW5kcyBDaGFyZG9ubmF5LCBSYWluc3Rvcm0gUm9zZSwgQnlpbmd0b24gWmluZmFuZGVsKTxicj4kNCBDaGlwcyAmIFJvYXN0ZWQgU2Fsc2E8YnI+JDQgQ3Jpc3B5IEZyaWVzICYgQ3JlYW15IEJCUSBTYXVjZTxicj4kNiBTd2VldCBQaWNrbGVkIE9uaW9uIFJpbmdzPGJyPiQ2IEVnZ3BsYW50IEJydXNjaGV0dGE8YnI+JDYgQ2hpY2tlbiBUZW5kZXJzPGJyPiQ4IEZyZXNoIFRvbWF0byAmIENhcGVyIFBhc3Rh" width="400" style="border:none !important;" height="300"></iframe>`)[0];
+            popup_965318e7b1295c08a0c25c2a8a39141a.setContent(i_frame_ae225fc998a4fca2bb17dc1710197be1);
+        
+
+        marker_540dfa64c54ccb647ee552d95e5210b7.bindPopup(popup_965318e7b1295c08a0c25c2a8a39141a)
+        ;
+
+        
+    
+    
+            marker_540dfa64c54ccb647ee552d95e5210b7.bindTooltip(
+                `<div>
+                     Hana Koa Brewing
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
